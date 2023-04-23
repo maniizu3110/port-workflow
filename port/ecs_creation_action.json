@@ -1,0 +1,77 @@
+[
+  {
+    "identifier": "create-new-ecs-cluster",
+    "title": "ECSクラスターを作成",
+    "userInputs": {
+      "properties": {
+        "github_repository_url": {
+          "type": "string",
+          "title": "github repository url",
+          "format": "url",
+          "default": "https://github.com/maniizu3110/port-workflow"
+        },
+        "github_repository_branch": {
+          "type": "string",
+          "title": "github repository branch",
+          "default": "main"
+        },
+        ".env": {
+          "title": ".env",
+          "description": ".envファイルをjson形式で記述してください",
+          "type": "string",
+          "default": "ENV=develop port=80"
+        },
+        "port": {
+          "type": "number",
+          "title": "port",
+          "default": 80
+        },
+        "build_image_path": {
+          "type": "string",
+          "title": "build image path",
+          "description": "docker build を実行するディレクトリのパス",
+          "default": "/api"
+        },
+        "domain": {
+          "type": "string",
+          "title": "domain",
+          "description": "決まっていない場合は空白にしてください",
+          "default": "dev.example.com"
+        },
+        "aws_access_key_id": {
+          "type": "string",
+          "title": "aws access key id",
+          "description": "AWSアクセスキー"
+        },
+        "aws_secret_access_key": {
+          "type": "string",
+          "title": "aws access key id",
+          "description": "AWSシークレットアクセスキー"
+        },
+        "aws_region": {
+          "type": "string",
+          "title": "aws region",
+          "default": "ap-northeast-1"
+        }
+      },
+      "required": [
+        "github_repository_url",
+        "github_repository_branch",
+        ".env",
+        "port",
+        "build_image_path",
+        "aws_access_key_id",
+        "aws_secret_access_key",
+        "aws_region"
+      ]
+    },
+    "invocationMethod": {
+      "type": "GITHUB",
+      "org": "maniizu3110",
+      "repo": "port-workflow",
+      "workflow": "terraform.yaml"
+    },
+    "trigger": "CREATE",
+    "description": "github actions内で指定されているAWSアカウントを使用してS3バケットを作成します"
+  }
+]

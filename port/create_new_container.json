@@ -1,0 +1,11 @@
+{
+  "identifier": "ECS",
+  "description": "ECSの操作をします",
+  "title": "ECS",
+  "schema": {
+    "properties": {}
+  },
+  "mirrorProperties": {},
+  "calculationProperties": {},
+  "relations": {}
+}
