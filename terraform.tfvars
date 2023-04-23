@@ -1,1 +1,1 @@
-bucket_name=default-bucket
+bucket_name="default-bucket"
