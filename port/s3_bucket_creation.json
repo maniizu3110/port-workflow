@@ -1,0 +1,22 @@
+{
+    "identifier": "s3bucket",
+    "description": "s3 buketの操作をします",
+    "title": "s3Bucket",
+    "icon": "Bucket",
+    "schema": {
+      "properties": {
+        "bucket_name": {
+          "type": "string",
+          "title": "s3 bucket name",
+          "icon": "Bucket",
+          "description": "作成するs3バケットの名前(グローバルに一意である必要があります)"
+        }
+      },
+      "required": [
+        "bucket_name"
+      ]
+    },
+    "mirrorProperties": {},
+    "calculationProperties": {},
+    "relations": {}
+  }

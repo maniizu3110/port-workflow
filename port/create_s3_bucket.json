@@ -1,0 +1,24 @@
+[
+    {
+      "identifier": "create",
+      "title": "Create",
+      "userInputs": {
+        "properties": {
+          "bucket_name": {
+            "type": "string",
+            "title": "S3 bucket name",
+            "default": "my-bucket-name"
+          }
+        },
+        "required": ["bucket_name"]
+      },
+      "invocationMethod": {
+        "type": "GITHUB",
+        "org":"maniizu3110",
+        "repo":"port-workflow",
+        "workflow": "terraform.yaml"
+      },
+      "trigger": "CREATE",
+      "description": "github actions内で指定されているAWSアカウントを使用してS3バケットを作成します"
+    }
+  ]
