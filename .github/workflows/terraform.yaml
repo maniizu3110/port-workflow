@@ -30,6 +30,10 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         BUCKET_NAME: ${{ github.event.inputs.bucket-name }}
 
+    - name: replace tfvars with trigger inputs
+      run: |
+        sed -i "s/BUCKET_NAME/${{ github.event.inputs.bucket-name }}/g" terraform.tfvars
+
     - name: Terraform Plan
       run: terraform plan
       env:
