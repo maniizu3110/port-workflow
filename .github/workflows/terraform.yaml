@@ -5,6 +5,13 @@ on:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+        bucket-name:
+          description: 'Bucket name'
+          required: true
+        port_payload:
+          description: 'Port payload'
+          required: true
 
 jobs:
   terraform:
