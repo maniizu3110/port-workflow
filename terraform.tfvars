@@ -1,1 +1,0 @@
-bucket_name = "${local.s3_bucket_name}"
